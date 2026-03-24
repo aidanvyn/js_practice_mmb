@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Video Controls</title>
+	<link rel="stylesheet" type="text/css" href="css/video.css">
+</head>
+<body> 
+<main>
+	<h1>JavaScript Video Controls</h1>
+	<div class = "options">
+		<button id = "play">Play Video</button>
+		<button id = "pause">Pause Video</button>
+		<button id = "slower">Slow Down</button>
+		<button id = "faster">Speed Up</button>
+		<button id = "skip">Skip Ahead</button>
+	</div>
+
+	<figure>
+
+		<video class = "video" 
+			width="640" 
+			height="360" 
+			id="player1" 
+			preload="none"
+			src="assets/marchingband.mov">
+			  
+		    <track src="captions_en.vtt" kind="captions" srclang="en" label="english_captions">	
+		  		Your browser does not support HTML5 video.
+		</video>
+		<figcaption>[The Michigan Marching Band]</figcaption>
+		</figure> 
+	<button id="muteButton">Mute</button><br>
+
+	<label for="slider">Volume</label>: 0 <input type="range" id="slider" min="0" max="100" value="100" step="10"> 100%<br>
+	<div>Volume is: <span id = "volumeDisplay"> </span><br><br></div>
+
+	<button id = "vintage">Old School Version</button>
+
+	<p>Video courtesy of Allison Sweet.</p>
+</main>
+<section>
+
+	<div class="controls">
+            <button type="button" class="control" data-filter="all">All</button>
+            <button type="button" class="control" data-filter=".a">A</button>
+            <button type="button" class="control" data-filter=".b">B</button>
+            <button type="button" class="control" data-filter=".c">C</button>
+            <button type="button" class="control" data-filter="none">None</button>
+
+            <button type="button" class="control" data-sort="default:asc">Asc</button>
+            <button type="button" class="control" data-sort="default:desc">Desc</button>
+        </div>
+	<!-- https://github.com/patrickkunka/mixitup/tree/v3 -->
+	<div class = "someDivs">
+		<div class = "mix a">A</div>
+		<div class = "mix b">B</div>
+		<div class = "mix c">C</div>
+		<div class = "mix c">C</div>
+		<div class = "mix c">C</div>
+		<div class = "mix a">A</div>
+		<div class = "mix a">A</div>
+		<div class = "mix b">B</div>
+		<div class = "mix b">B</div>
+		<div class = "mix a">A</div>
+		<div class = "mix c">C</div>
+	</div>
+	</section>
+</body> 
+<script src = "js/video.js"></script>
+ <script src="../../dist/mixitup.min.js"></script>
+<script>
+	var containerEl = document.querySelector('.someDivs');
+	var mixer = mixitup(containerEl);
+</script>
+</html>
